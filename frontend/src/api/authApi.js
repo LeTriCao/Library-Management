@@ -1,0 +1,22 @@
+import { apiFetch, clearToken, setToken } from "./apiClient";
+
+export async function loginApi(usernameOrEmail, password) {
+    const data = await apiFetch("/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ usernameOrEmail, password })
+    });
+
+    if (data?.token) {
+        setToken(data.token);
+    }
+
+    return data;
+}
+
+export function meApi() {
+    return apiFetch("/api/auth/me");
+}
+
+export function logoutApi() {
+    clearToken();
+}

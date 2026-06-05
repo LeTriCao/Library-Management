@@ -1,0 +1,520 @@
+{
+  "info": {
+    "_postman_id": "09a6f84d-2dd2-46cc-b593-ac38d23e1890",
+    "name": "Library Desktop App API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55232733",
+    "_collection_link": "https://go.postman.co/collection/55232733-09a6f84d-2dd2-46cc-b593-ac38d23e1890?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Health & Auth",
+      "item": [
+        {
+          "name": "00.1 - Health check",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "00.2 - Login thủ thư",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "00.3 - Current user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Lấy user hiện tại thành công\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "const json = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"Đúng tài khoản thủ thư\", function () {\r",
+                  "    pm.expect(json.tenDangNhap).to.eql(\"thuthu01\");\r",
+                  "    pm.expect(json.tenVaiTro).to.eql(\"THU_THU\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aHV0aHUwMSIsIm1hVmFpVHJvIjoiVlRfVEhVX1RIVSIsIm1hTmhhblZpZW4iOiJOVl9UVDAwMSIsIm1hVGFpS2hvYW4iOiJUS19USFVUSFUwMSIsIm1hRG9jR2lhIjpudWxsLCJleHAiOjE3ODA0MzM2MDAsInRlblZhaVRybyI6IlRIVV9USFUifQ.61y881RZbTyIpQ-fV7YnugQto4SQj2KwBhwJmplpsi8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aHV0aHUwMSIsIm1hVmFpVHJvIjoiVlRfVEhVX1RIVSIsIm1hTmhhblZpZW4iOiJOVl9UVDAwMSIsIm1hVGFpS2hvYW4iOiJUS19USFVUSFUwMSIsIm1hRG9jR2lhIjpudWxsLCJleHAiOjE3ODA0MTk2MjMsInRlblZhaVRybyI6IlRIVV9USFUifQ.dAUvbfJ_hPZ9qyeZELDKphF6qRo5xzyMBJw349uCqeQ",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Options",
+      "item": [
+        {
+          "name": "01.1 - Options: Danh sách chi nhánh",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "01.2 - Options: Danh sách vị trí sách",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "01.3 - Options: Danh sách trạng thái cuốn sách",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "01.4 - Options: Danh sách nhóm độc giả",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "01.5 - Options: Danh sách gói thành viên",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "01.6 - Options: Danh sách phương thức thanh toán",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Books & Copies",
+      "item": [
+        {
+          "name": "02.1 - Books: Danh sách đầu sách",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "02.2 - Books: Chi tiết đầu sách F0102.2 - Books: Chi tiết đầu sách F01",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "02.3 - Book copies: Danh sách cuốn sách",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "02.4 - Book copies: Chi tiết cuốn sách F01-001",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Readers",
+      "item": [
+        {
+          "name": "03.1 - Readers: Danh sách độc giả",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "03.2 - Readers: Chi tiết độc giả DG001",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Loan Flow - Mượn sách",
+      "item": [
+        {
+          "name": "04.1 - Loan flow: Sinh biến phiếu mượn",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "04.2 - Loan flow: Mượn F01-001 cho DG001",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "04.3 - Loan flow: Xem lại phiếu mượn PM_P17_001",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "04.4 - Loan flow: Kiểm tra F01-001 đã chuyển sang đang mượn",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Return Flow - Trả sách",
+      "item": [
+        {
+          "name": "05.1 - Return flow: Trả F01-001 bình thường",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aHV0aHUwMSIsIm1hVmFpVHJvIjoiVlRfVEhVX1RIVSIsIm1hTmhhblZpZW4iOiJOVl9UVDAwMSIsIm1hVGFpS2hvYW4iOiJUS19USFVUSFUwMSIsIm1hRG9jR2lhIjpudWxsLCJleHAiOjE3ODA0MzM2MDAsInRlblZhaVRybyI6IlRIVV9USFUifQ.61y881RZbTyIpQ-fV7YnugQto4SQj2KwBhwJmplpsi8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"maPhieuTra\": \"PTR_P17_001\",\r\n  \"maDocGia\": \"DG001\",\r\n  \"maNhanVienNhan\": \"NV_TT001\",\r\n  \"maChiNhanh\": \"CN_TD\",\r\n  \"ghiChu\": \"Test trả F01-001 bình thường bằng Postman\",\r\n  \"chiTiet\": [\r\n    {\r\n      \"maChiTietMuon\": \"CTM_PM_P17_001_01\",\r\n      \"tinhTrangKhiTra\": \"Bình thường\",\r\n      \"tienPhatHongMat\": 0,\r\n      \"ghiChu\": \"Sách còn tốt\"\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/returns",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "returns"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05.2 - Return flow: Kiểm tra F01-001 quay về sẵn có",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Debt & Payment Flow",
+      "item": [
+        {
+          "name": "06.1 - Debt flow: Sinh biến tạo nợ",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "06.2 - Debt flow: Mượn F01-002 để test tạo nợ",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "06.3 - Debt flow: Trả F01-002 bị hỏng để sinh khoản nợ",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "06.4 - Debt flow: Xem nợ của DG001",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "06.5 - Debt flow: Thu tiền khoản nợ vừa tạo",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "06.6 - Debt flow: Kiểm tra nợ đã thanh toán",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "07.1 - Reports: Báo cáo tổng nợ độc giả",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "07.2 - Reports: Báo cáo số sách đang mượn",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "07.3 - Reports: Báo cáo mượn theo thể loại",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "07.4 - Reports: Báo cáo trả trễ",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Báo cáo trả trễ chạy được\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "const json = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"Response là array\", function () {\r",
+                  "    pm.expect(json).to.be.an(\"array\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aHV0aHUwMSIsIm1hVmFpVHJvIjoiVlRfVEhVX1RIVSIsIm1hTmhhblZpZW4iOiJOVl9UVDAwMSIsIm1hVGFpS2hvYW4iOiJUS19USFVUSFUwMSIsIm1hRG9jR2lhIjpudWxsLCJleHAiOjE3ODA0MzM2MDAsInRlblZhaVRybyI6IlRIVV9USFUifQ.61y881RZbTyIpQ-fV7YnugQto4SQj2KwBhwJmplpsi8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/reports/late-returns?month=6&year=2026",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "late-returns"
+              ],
+              "query": [
+                {
+                  "key": "month",
+                  "value": "6"
+                },
+                {
+                  "key": "year",
+                  "value": "2026"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Negative Tests",
+      "item": [
+        {
+          "name": "08.1 - Negative test: Không token gọi API độc giả",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "08.2 - Negative test: Mượn sách không tồn tại",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "08.3 - Negative test: Thu tiền vượt quá khoản nợ",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aHV0aHUwMSIsIm1hVmFpVHJvIjoiVlRfVEhVX1RIVSIsIm1hTmhhblZpZW4iOiJOVl9UVDAwMSIsIm1hVGFpS2hvYW4iOiJUS19USFVUSFUwMSIsIm1hRG9jR2lhIjpudWxsLCJleHAiOjE3ODA0MTk2MjMsInRlblZhaVRybyI6IlRIVV9USFUifQ.dAUvbfJ_hPZ9qyeZELDKphF6qRo5xzyMBJw349uCqeQ",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

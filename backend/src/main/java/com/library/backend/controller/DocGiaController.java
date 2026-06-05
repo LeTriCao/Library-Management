@@ -1,0 +1,49 @@
+package com.library.backend.controller;
+
+import com.library.backend.dto.DocGiaRequest;
+import com.library.backend.dto.DocGiaResponse;
+import com.library.backend.service.DocGiaService;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/readers")
+public class DocGiaController {
+
+    private final DocGiaService docGiaService;
+
+    public DocGiaController(DocGiaService docGiaService) {
+        this.docGiaService = docGiaService;
+    }
+
+    @GetMapping
+    public List<DocGiaResponse> getAll() {
+        return docGiaService.getAll();
+    }
+
+    @GetMapping("/{maDocGia}")
+    public DocGiaResponse getById(@PathVariable String maDocGia) {
+        return docGiaService.getById(maDocGia);
+    }
+
+    @PostMapping
+    public DocGiaResponse create(@Valid @RequestBody DocGiaRequest request) {
+        return docGiaService.create(request);
+    }
+
+    @PutMapping("/{maDocGia}")
+    public DocGiaResponse update(
+            @PathVariable String maDocGia,
+            @Valid @RequestBody DocGiaRequest request
+    ) {
+        return docGiaService.update(maDocGia, request);
+    }
+
+    @DeleteMapping("/{maDocGia}")
+    public String disable(@PathVariable String maDocGia) {
+        docGiaService.disable(maDocGia);
+        return "Ngừng hoạt động độc giả thành công";
+    }
+}

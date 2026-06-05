@@ -1,0 +1,48 @@
+# =========================
+# Node / React / Electron
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/release/
+frontend/.vite/
+
+# =========================
+# Java / Spring Boot
+# =========================
+backend/target/
+backend/*.log
+backend/derby.log
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+frontend/.env
+frontend/.env.*
+backend/src/main/resources/application.properties
+
+# Cho phép push file cấu hình mẫu nếu có
+!backend/src/main/resources/application-example.properties
+
+# =========================
+# IDE
+# =========================
+.idea/
+.vscode/
+*.iml
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build outputs
+# =========================
+*.exe
+*.msi
+*.7z
+*.zip
+*.asar
