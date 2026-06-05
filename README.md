@@ -7,7 +7,7 @@
 
 # Hướng Dẫn Sử Dụng LibraDesk
 
-LibraDesk là ứng dụng desktop quản lý thư viện. Tài liệu này dành cho người sử dụng app, không phải tài liệu hướng dẫn lập trình.
+LibraDesk là ứng dụng desktop quản lý thư viện. Tài liệu này được dùng để hướng người dùng sử dụng app, không phải tài liệu hướng dẫn lập trình.
 
 ---
 
